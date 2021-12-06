@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="接雨水算法, rgylin的小窝">
+    <meta name="keywords" content="数据结构---二叉树算法(-), rgylin的小窝">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>接雨水算法 | rgylin的小窝</title>
+    <title>数据结构---二叉树算法(-) | rgylin的小窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">接雨水算法</h1>
+                    <h1 class="description center-align post-title">数据结构---二叉树算法(-)</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">算法学习</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                算法学习
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
                             </a>
                         
                     </div>
@@ -456,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-10-22
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-10-22
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    438
+                    410
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    1 Min
                 </div>
                 
 
@@ -500,71 +500,95 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="42-接雨水"><a href="#42-接雨水" class="headerlink" title="42. 接雨水"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/trapping-rain-water/">42. 接雨水</a></h4><p>给定 <code>n</code> 个非负整数表示每个宽度为 <code>1</code> 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
-<p>比如</p>
-<pre class="line-numbers language-none"><code class="language-none">输入：height &#x3D; [0,1,0,2,1,0,1,3,2,1,2,1]
-输出：6
-解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="普通算法"><a href="#普通算法" class="headerlink" title="普通算法"></a>普通算法</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">height <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
-
-left_M<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-right_M<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token builtin">len</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span>
-<span class="token builtin">sum</span><span class="token operator">=</span><span class="token number">0</span>
-<span class="token comment">#获取左边的最大值</span>
-left_max<span class="token operator">=</span><span class="token number">0</span>
-<span class="token comment">#获取右边的最大值</span>
-right_max<span class="token operator">=</span><span class="token number">0</span>
-<span class="token keyword">for</span> i<span class="token punctuation">,</span>j <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>left_max<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        left_max<span class="token operator">=</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    left_M<span class="token punctuation">.</span>append<span class="token punctuation">(</span>left_max<span class="token punctuation">)</span>
-<span class="token comment">#print(left_M)</span>
-
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>right_max<span class="token operator">&lt;</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        right_max<span class="token operator">=</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    right_M<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>right_max
-<span class="token comment">#print(right_M)</span>
-
-<span class="token keyword">for</span> h<span class="token punctuation">,</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>left_M<span class="token punctuation">,</span>right_M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    temp<span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token operator">-</span>height<span class="token punctuation">[</span>h<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token builtin">sum</span><span class="token operator">+=</span>temp<span class="token operator">-</span>height<span class="token punctuation">[</span>h<span class="token punctuation">]</span>
-<span class="token comment">#print(sum)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="利用栈"><a href="#利用栈" class="headerlink" title="利用栈"></a>利用栈</h4><blockquote>
-<pre class="line-numbers language-df" data-language="df"><code class="language-df">思想: 从左向右遍历 如果遍历过程中的元素大于栈的首元素,弹出栈顶元素 并计算相应的长度和高度累加即可.注意求长度的时候是 :当前元素 与(进循环)栈中此元素的上一个元素之差 即i-left -1  
-高度则是 当前元素与 栈中(pop一次了)顶元素中的最小值再减去 一开始pop出元素的高度 即低洼<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+                <h2 id="数据结构—二叉树算法-一"><a href="#数据结构—二叉树算法-一" class="headerlink" title="数据结构—二叉树算法(一)"></a>数据结构—二叉树算法(一)</h2><blockquote>
+<p>前言:温习一下数据结构的算法</p>
 </blockquote>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-    int trap(vector&lt;int&gt;&amp; height) &#123;
-            int sum&#x3D;0;
-    stack&lt;int&gt;stk;
-    int n &#x3D; height.size();
-    for(int i&#x3D;0;i&lt;height.size();i++)&#123;
-        while(!stk.empty() &amp;&amp;height[i]&gt;height[stk.top()])&#123;
+<h3 id="递归算法"><a href="#递归算法" class="headerlink" title="递归算法"></a>递归算法</h3><blockquote>
+<p>确定递归参数 以及返回值</p>
+<p>确定终止条件</p>
+</blockquote>
+<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><pre class="line-numbers language-none"><code class="language-none">逻辑就是:中左右 先访问中间节点然后在访问左边节点虽有就是右边节点<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-            int top&#x3D; stk.top();
-            stk.pop();
-            if(stk.empty())&#123;
-                break;
-            &#125;
-            int left&#x3D; stk.top();
-            int width&#x3D; i - left-1;
-            int height1&#x3D; min(height[left],height[i])-height[top];
-            sum+&#x3D; width*height1;
+<p>C++实现</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">struct TreeNode&#123;
+    int val;
+    TreeNode * left;
+    TreeNode * right;   
+&#125;;
+int main()
+&#123;
+    vector&lt;int&gt; result;
+    travel(purpose,result);   
+&#125;
+void travel(TreeNode *p,vector&lt;int&gt;&amp;vec)&#123;
+    if(p&#x3D;&#x3D;NULL)return ;
+    vec.push_back(p-&gt;val);
+    travel(p-&gt;left,vec);
+    travel(p-&gt;right,vec);
 
-    &#125;
-    stk.push(i);
-    &#125;
-  return sum;
-    &#125;
-  
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>python</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">preorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> TreeNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        result<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">travel</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token operator">==</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> 
+            result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            travel<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            travel<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        
+        travel<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>改个顺序就ok了，因为这里是前左右 所以要一直递归到左叶子,然后在访问右叶子,（中叶子已经访问完毕</p>
+<pre class="line-numbers language-none"><code class="language-none">def preorderTraversal(self, root: TreeNode) -&gt; List[int]:
+        result&#x3D;[]
+        def travel(temp):
+            if(temp&#x3D;&#x3D;None):
+                return 
+            travel(temp.left)
+            result.append(temp.val)
+
+            travel(temp.right)
+        
+        travel(root)
+        return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="后续遍历"><a href="#后续遍历" class="headerlink" title="后续遍历"></a>后续遍历</h4><p>一个样子</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">preorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> TreeNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        result<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">travel</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token operator">==</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> 
+            travel<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            travel<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+        
+        travel<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="非递归算法-用栈实现"><a href="#非递归算法-用栈实现" class="headerlink" title="非递归算法(用栈实现)"></a>非递归算法(用栈实现)</h3><blockquote>
+<p>利用栈,因为是中左右 所以我们 首先是将右孩子放入栈中,然后才将左孩子放入,这样如果出栈的时候才是左 然后右 这就起到中左右的顺序 如果遍历节点过程不为空的话 就循环</p>
+</blockquote>
+<p>代码为</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">preorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> TreeNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">==</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        result<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+
+        <span class="token keyword">while</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            temp<span class="token operator">=</span> stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> result
+            
+            <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -592,7 +616,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/22/jie-yu-shui-suan-fa/">http://example.com/2021/10/22/jie-yu-shui-suan-fa/</a>
+                    <a href="http://example.com/2021/12/07/shu-ju-jie-gou-er-cha-shu-suan-fa/">http://example.com/2021/12/07/shu-ju-jie-gou-er-cha-shu-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -630,8 +654,8 @@ public:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">算法学习</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                         </div>
@@ -803,17 +827,18 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/10/24/di-si-jie-shan-dong-sheng-da-xue-sheng-wang-luo-ji-zhu-da-sai-wp-bu-fen/">
+                <a href="/2021/12/07/shu-ju-jie-gou-er-cha-shu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第四届山东省大学生网络技术大赛WP(部分">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="数据结构---二叉树算法(-)">
                         
-                        <span class="card-title">第四届山东省大学生网络技术大赛WP(部分</span>
+                        <span class="card-title">数据结构---二叉树算法(-)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -823,26 +848,27 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="post-category">
-                                    网络安全
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
@@ -856,13 +882,13 @@ public:
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/09/opencv-xue-xi/">
+                <a href="/2021/11/24/java-spring-kuang-jia-xue-xi-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="OpenCv学习">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="java Spring框架学习(一)">
                         
-                        <span class="card-title">OpenCv学习</span>
+                        <span class="card-title">java Spring框架学习(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -873,12 +899,16 @@ public:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            rgylin
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -886,8 +916,8 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python-AI%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">python-AI基础</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
