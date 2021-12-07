@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    410
+                    662
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -568,7 +568,7 @@ void travel(TreeNode *p,vector&lt;int&gt;&amp;vec)&#123;
         travel<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
         <span class="token keyword">return</span> result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="非递归算法-用栈实现"><a href="#非递归算法-用栈实现" class="headerlink" title="非递归算法(用栈实现)"></a>非递归算法(用栈实现)</h3><blockquote>
+<h3 id="非递归算法—前序遍历-用栈实现"><a href="#非递归算法—前序遍历-用栈实现" class="headerlink" title="非递归算法—前序遍历(用栈实现)"></a>非递归算法—前序遍历(用栈实现)</h3><blockquote>
 <p>利用栈,因为是中左右 所以我们 首先是将右孩子放入栈中,然后才将左孩子放入,这样如果出栈的时候才是左 然后右 这就起到中左右的顺序 如果遍历节点过程不为空的话 就循环</p>
 </blockquote>
 <p>代码为</p>
@@ -589,6 +589,46 @@ void travel(TreeNode *p,vector&lt;int&gt;&amp;vec)&#123;
         <span class="token keyword">return</span> result
             
             <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="非递归算法—中序遍历-用栈实现"><a href="#非递归算法—中序遍历-用栈实现" class="headerlink" title="非递归算法—中序遍历(用栈实现)"></a>非递归算法—中序遍历(用栈实现)</h3><blockquote>
+<p>中序遍历是从最左边叶子节点开始的,所以我们先遍历到最左边叶子节点, 遍历完成后, 此时root为NULL 所以弹出父节点,也就是左边叶子节点,访问存储,然后再遍历右节点.</p>
+</blockquote>
+<p>代码为</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">preorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> TreeNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">not</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    
+    result<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    temp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">while</span> root <span class="token keyword">or</span> temp<span class="token punctuation">:</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            temp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+            root<span class="token operator">=</span> root<span class="token punctuation">.</span>left <span class="token comment"># 遍历左边节点</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            root<span class="token operator">=</span> temp<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#开始访问节点</span>
+            result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            root<span class="token operator">=</span> root<span class="token punctuation">.</span>right<span class="token comment">#访问右孩子 没有的话将栈中元素弹出 继续访问上一层节点</span>
+    <span class="token keyword">return</span> result
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="非递归算法—后续遍历-用栈实现"><a href="#非递归算法—后续遍历-用栈实现" class="headerlink" title="非递归算法—后续遍历(用栈实现)"></a>非递归算法—后续遍历(用栈实现)</h3><blockquote>
+<p>后续遍历是左右中    倒过来就是中右左    将前序遍历中的左和右互换一下就行了</p>
+</blockquote>
+<p>代码为</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">preorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> TreeNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">not</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        result<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        stack<span class="token operator">=</span><span class="token punctuation">[</span>root<span class="token punctuation">]</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            temp<span class="token operator">=</span> stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>temp<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1068,7 +1108,7 @@ void travel(TreeNode *p,vector&lt;int&gt;&amp;vec)&#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">11.5k</span>
+                        class="white-color">11.8k</span>
             
             
             
