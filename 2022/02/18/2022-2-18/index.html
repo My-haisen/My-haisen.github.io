@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Flask学习(待补充), rgylin的小窝">
+    <meta name="keywords" content="2022/2/18, rgylin的小窝">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Flask学习(待补充) | rgylin的小窝</title>
+    <title>2022/2/18 | rgylin的小窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Flask学习(待补充)</h1>
+                    <h1 class="description center-align post-title">2022/2/18</h1>
                 </div>
             </div>
         </div>
@@ -431,23 +431,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web/">
-                                <span class="chip bg-color">Web</span>
+                            <a href="/tags/Misc/">
+                                <span class="chip bg-color">Misc</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Web/" class="post-category">
-                                Web
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -456,28 +447,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-11-01
+                    2022-02-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-11-01
+                    2022-02-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    569
+                    156
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    1 Min
                 </div>
                 
 
@@ -500,156 +491,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Flask框架的学习"><a href="#Flask框架的学习" class="headerlink" title="Flask框架的学习"></a>Flask框架的学习</h2><h3 id="获取用户的参数"><a href="#获取用户的参数" class="headerlink" title="获取用户的参数"></a>获取用户的参数</h3><p>这里利用route(‘要访问的路径名’)</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask
-
-app<span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
-
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/rgylin/&lt;name>'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">hello_world</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span>  <span class="token string">'hello_world%s'</span><span class="token operator">%</span>name
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/rgylin/&lt;int:age>'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">hello_world1</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span>  <span class="token string">'你的年龄%d'</span><span class="token operator">%</span>age
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>这里会根据用户输入的变量类型自动判断</p>
-</blockquote>
-<p><img src="C:\Users\ASUS\Desktop\rgylin\web框架学习\QQ截图20211101191229.png" alt="QQ截图20211101191229"></p>
-<h3 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h3><blockquote>
-<p>以一个表单传递例子来说明</p>
-</blockquote>
-<p>首页制作为</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span>render_template<span class="token punctuation">,</span>request
-
-app<span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
-
-
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span>  render_template<span class="token punctuation">(</span><span class="token string">'register.html'</span><span class="token punctuation">)</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/result'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">,</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#设置提交方式get post</span>
-<span class="token keyword">def</span> <span class="token function">result</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>method<span class="token operator">==</span><span class="token string">'POST'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        result<span class="token operator">=</span>request<span class="token punctuation">.</span>form <span class="token comment">#获取</span>
-        <span class="token keyword">return</span>  render_template<span class="token punctuation">(</span><span class="token string">'result.html'</span><span class="token punctuation">,</span>result<span class="token operator">=</span>result<span class="token punctuation">)</span>
-
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>访问register</p>
-<p>会返回register.html的内容</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://127.0.0.1:5000/result<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    名字:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    年龄<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>   <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span>  <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>访问result 的路由</p>
-<p>返回result.html的界面</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-&#123;% for i,j in result.items() %&#125;
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>&#123;&#123;i&#125;&#125;&#123;&#123;j&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-
-&#123;% endfor %&#125;
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>打印输出</p>
-<h3 id="列出所有的url参数"><a href="#列出所有的url参数" class="headerlink" title="列出所有的url参数"></a>列出所有的url参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span>render_template<span class="token punctuation">,</span>request
-
-app<span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
-
-
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span>  request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>__str__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>访问<a target="_blank" rel="noopener" href="http://127.0.0.1:5000/?rgylin=nnihao">http://127.0.0.1:5000/?rgylin=nnihao</a></p>
-<blockquote>
-<p>返回:ImmutableMultiDict([(‘rgylin’, ‘nnihao’)])</p>
-</blockquote>
-<h3 id="获取某个指定的参数"><a href="#获取某个指定的参数" class="headerlink" title="获取某个指定的参数"></a>获取某个指定的参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span>  request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'rgylin'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>输入/?rgylin=nnihao</p>
-<blockquote>
-<p>返回nihao</p>
-</blockquote>
-<p>如果访问不存在的参数则会报错</p>
-<p>解决代码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    r <span class="token operator">=</span> request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'rgylin'</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>r<span class="token operator">==</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token string">'你输入的参数不对'</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p>测试代码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span>render_template_string<span class="token punctuation">,</span>request
-
-app<span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
-
-
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    r <span class="token operator">=</span> temp<span class="token operator">=</span><span class="token triple-quoted-string string">'''
-    &lt;div> &lt;h3>%s&lt;/h3>
-    &lt;/div>
-    '''</span><span class="token operator">%</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span>  render_template_string<span class="token punctuation">(</span>temp<span class="token punctuation">)</span>
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>输入1=4发现计算出来了 那么这里是可控的 存在ssti模板注入</p>
-</blockquote>
-<h3 id="类的学习"><a href="#类的学习" class="headerlink" title="类的学习"></a>类的学习</h3><blockquote>
-<p>获取类的基类</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">rgylin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>age<span class="token operator">=</span><span class="token number">12</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>rgylin<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__base__<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>也可以写成这样</p>
-<pre class="line-numbers language-none"><code class="language-none">print(&quot;&quot;.__class__.__bases__[0]) #获取字符串的基类<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>我们在获取其子类就行了</p>
-<pre class="line-numbers language-none"><code class="language-none">print(&quot;&quot;.__class__.__bases__[0].__subclasses__())<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>通过调用globals可以获取到类内存在的方法、属性等值：</p>
+                <h2 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h2><p>第一种呢:就是下载 Linux虚拟机,一般都会自带 binwalk 和foremost 的，具体安装呢,可以自行百度，baidu  yyds ，这个linux很有用的 可以早学着</p>
+<h2 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h2><p>不想安的呢,那就手动分离,</p>
+<p>首先是一个jpg文件那我们搜一下,文件尾，既然有多个文件,那么我们就看一个文件尾之后就是那一个文件了,拖进winhex 搜索  jpg文件尾 ffd9</p>
+<p><img src="C:\Users\ASUS\Desktop\QQ截图20220218212510.jpg" alt="QQ截图20220218212510"></p>
+<p>![GIF 2022-2-18 21-27-04](C:\Users\ASUS\Desktop\GIF 2022-2-18 21-27-04.gif)</p>
+<p>最后捏</p>
+<p>就拿到了</p>
+<p>然后就可以快快乐乐的打卡啦</p>
+<p><img src="C:\Users\ASUS\Desktop\QQ截图20220218212816.jpg" alt="QQ截图20220218212816"></p>
 
                 
             </div>
@@ -676,7 +526,7 @@ app<span class="token operator">=</span> Flask<span class="token punctuation">(<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/11/01/flask-xue-xi-dai-bu-chong/">http://example.com/2021/11/01/flask-xue-xi-dai-bu-chong/</a>
+                    <a href="http://example.com/2022/02/18/2022-2-18/">http://example.com/2022/02/18/2022-2-18/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -714,8 +564,8 @@ app<span class="token operator">=</span> Flask<span class="token punctuation">(<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Web/">
-                                    <span class="chip bg-color">Web</span>
+                                <a href="/tags/Misc/">
+                                    <span class="chip bg-color">Misc</span>
                                 </a>
                             
                         </div>
@@ -887,17 +737,18 @@ app<span class="token operator">=</span> Flask<span class="token punctuation">(<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/11/04/pa-chong-wan-cheng-she-you-de-xu-yao-ren-wu/">
+                <a href="/2022/02/18/2022-2-18/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="爬虫-完成舍友的任务需求">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="2022/2/18">
                         
-                        <span class="card-title">爬虫-完成舍友的任务需求</span>
+                        <span class="card-title">2022/2/18</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -907,26 +758,23 @@ app<span class="token operator">=</span> Flask<span class="token punctuation">(<
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-18
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category">
-                                    python
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            rgylin
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/Misc/">
+                        <span class="chip bg-color">Misc</span>
                     </a>
                     
                 </div>
@@ -940,13 +788,13 @@ app<span class="token operator">=</span> Flask<span class="token punctuation">(<
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/30/opncv-xue-xi-er/">
+                <a href="/2021/12/07/shu-ju-jie-gou-er-cha-shu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="OpnCV学习(二)">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="数据结构---二叉树算法(-)">
                         
-                        <span class="card-title">OpnCV学习(二)</span>
+                        <span class="card-title">数据结构---二叉树算法(-)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -957,14 +805,14 @@ app<span class="token operator">=</span> Flask<span class="token punctuation">(<
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
@@ -974,8 +822,8 @@ app<span class="token operator">=</span> Flask<span class="token punctuation">(<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>

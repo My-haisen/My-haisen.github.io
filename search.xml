@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>2022/2/18</title>
+      <link href="/2022/02/18/2022-2-18/"/>
+      <url>/2022/02/18/2022-2-18/</url>
+      
+        <content type="html"><![CDATA[<h2 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h2><p>第一种呢:就是下载 Linux虚拟机,一般都会自带 binwalk 和foremost 的，具体安装呢,可以自行百度，baidu  yyds ，这个linux很有用的 可以早学着</p><h2 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h2><p>不想安的呢,那就手动分离,</p><p>首先是一个jpg文件那我们搜一下,文件尾，既然有多个文件,那么我们就看一个文件尾之后就是那一个文件了,拖进winhex 搜索  jpg文件尾 ffd9</p><p><img src="C:\Users\ASUS\Desktop\QQ截图20220218212510.jpg" alt="QQ截图20220218212510"></p><p>![GIF 2022-2-18 21-27-04](C:\Users\ASUS\Desktop\GIF 2022-2-18 21-27-04.gif)</p><p>最后捏</p><p>就拿到了</p><p>然后就可以快快乐乐的打卡啦</p><p><img src="C:\Users\ASUS\Desktop\QQ截图20220218212816.jpg" alt="QQ截图20220218212816"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Misc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构---二叉树算法(-)</title>
       <link href="/2021/12/07/shu-ju-jie-gou-er-cha-shu-suan-fa/"/>
       <url>/2021/12/07/shu-ju-jie-gou-er-cha-shu-suan-fa/</url>
