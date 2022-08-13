@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java学习从0到1, rgylin的小窝">
+    <meta name="keywords" content="8.13小结, rgylin的小窝">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>java学习从0到1 | rgylin的小窝</title>
+    <title>8.13小结 | rgylin的小窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java学习从0到1</h1>
+                    <h1 class="description center-align post-title">8.13小结</h1>
                 </div>
             </div>
         </div>
@@ -431,23 +431,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/%E8%80%83%E7%A0%94/">
+                                <span class="chip bg-color">考研</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/java/" class="post-category">
-                                java
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -456,28 +447,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-11-16
+                    2022-08-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-11-16
+                    2022-08-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    647
+                    652
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    3 Min
                 </div>
                 
 
@@ -500,122 +491,126 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>最近想接触一下JAVA安全,java的基本知识也忘了挺多,一步一步来加油!</p>
-</blockquote>
-<h3 id="局部变量-成员变量"><a href="#局部变量-成员变量" class="headerlink" title="局部变量 成员变量"></a>局部变量 成员变量</h3><p>局部变量</p>
-<pre class="line-numbers language-none"><code class="language-none">特点:类里方法外,无需手动初始化,自动赋值为默认值,该定义的类消失才会消失<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>成员变量</p>
-<pre class="line-numbers language-none"><code class="language-none">特点:方法里或者局部代码块里,必须手动进行初始化, 执行完对应方法块会被释放<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>测试代码</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>company</span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyText</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">//定义成员变量</span>
-    <span class="token class-name">String</span> name<span class="token operator">=</span><span class="token string">"rgylin"</span><span class="token punctuation">;</span>
-    <span class="token keyword">static</span> <span class="token keyword">int</span> age<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">//定义局部变量会</span>
-        <span class="token keyword">int</span> age<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span><span class="token comment">//定义局部变量</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//采用就近原则 输出100</span>
-    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">MyText</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//采取类.调用类中静态成员变量</span>
-    <span class="token punctuation">&#125;</span>
-
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <hr>
 <blockquote>
-<p>注意一点就是不能从静态方法中调用非静态变量  </p>
+<pre class="line-numbers language-none"><code class="language-none">距离考研132天
+喜欢小朱同学的第七天♥<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
-<h3 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h3><blockquote>
-<p>定义:指在一个类中定义多个同名的方法,但是每个方法的参数列表不同(指参数个数和类型不同,名字也可以不同),我们传递给不同参数个数和不同类型值的过程成为方法的重载</p>
+<p>880刷完了第三章基础部分 积分积麻了</p>
+<p>660复习了选择题</p>
+<p>数学没学到新知识</p>
+<p>![img](file:///C:\Users\ASUS\Documents\Tencent Files\1532147648\Image\C2C\F96FFDDD138AA47C488F07147ED355DA.jpg)</p>
+<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><h3 id="递归遍历"><a href="#递归遍历" class="headerlink" title="递归遍历"></a>递归遍历</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void pre(TreeNode *p)&#123;
+        
+        if(p!&#x3D;NULL)&#123;
+            vect.push_back(p-&gt;val);
+            preorderTraversal(p-&gt;left);
+            preorderTraversal(p-&gt;right);
+        &#125;
+    &#125;
+    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;
+        pre(root);
+        return vect;
+        
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>中序后续只改一下顺序即可</p>
+<h3 id="非递归遍历"><a href="#非递归遍历" class="headerlink" title="非递归遍历"></a>非递归遍历</h3><blockquote>
+<p>//思想:遇到左节点不空先入栈,并访问,空了就访问其右子树</p>
 </blockquote>
-<p>测试代码</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>company</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;
+    vector&lt;int&gt;result;
+    TreeNode *p &#x3D;root;
+    TreeNode *s[Maxn];
+    int top&#x3D;-1;
+    while(p || top!&#x3D;-1)&#123;
+        while(p)&#123;
+            result.push_back(p-&gt;val);
+            s[++top]&#x3D;p;
+            p&#x3D;p-&gt;left;
+        &#125;
+        p&#x3D; s[top];
+        top-&#x3D;1;
+        p&#x3D;p-&gt;right;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyText</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fanngfa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"无参执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fanngfa</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"年龄是"</span><span class="token operator">+</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fanngfa</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">,</span><span class="token keyword">double</span> score<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"多个参数被调用"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fanngfa</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"名字是"</span><span class="token operator">+</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    &#125;
+    return result;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<p>中序遍历一样再pop之前访问即可</p>
+<p>与之不同的是后序遍历</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;思想:遇到左节点不空先入栈,并访问 直到左孩子为空,读栈顶元素:右孩子不同且违背访问过,将右孩子遍历.否则出栈访问.
+vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;
+     vector&lt;int&gt;result;
+    TreeNode *p &#x3D;root;
+    TreeNode *s[Maxn];
+    int top&#x3D;-1;
+    TreeNode *r ; &#x2F;&#x2F;指向刚刚访问过的节点防止重复访问
+    while(p || top!&#x3D;-1)&#123;
+        while(p)&#123;
+            s[++top]&#x3D;p;
+            p&#x3D;p-&gt;left;
+        &#125;
+        p&#x3D;s[top];
+        if(p-&gt;right &amp;&amp; p-&gt;right!&#x3D;r)
+            p&#x3D;p-&gt;right;
+        else&#123;
+            p&#x3D; s[top--];
+            result.push_back(p-&gt;val);
+            r&#x3D; p;
+            p&#x3D;NULL; &#x2F;&#x2F;重置指针p 已经执行完访问该以这个节点为根的子树
+        &#125;
 
-        <span class="token function">fanngfa</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span><span class="token number">1.2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    &#125;
+    return result;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token punctuation">&#125;</span>
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220813213352424.png" alt="image-20220813213352424"></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) &#123;
+    vector&lt;vector&lt;int&gt;&gt;result;
+    if(root&#x3D;&#x3D;NULL)&#123;
+        return result;
+    &#125;
+     
+     TreeNode *p &#x3D;root;
+     
+     int  front&#x3D;-1,rear&#x3D;-1;
+     TreeNode *que[Maxn];
+     que[++rear]&#x3D; p;
+    vector&lt;int&gt; temp;
+    temp.push_back(p-&gt;val);
+    result.push_back(temp);
+     while(front&lt;rear)&#123;
+         int l&#x3D;front+1;
+         int r&#x3D; rear;
+         vector&lt;int&gt; temp;&#x2F;&#x2F;记录每一层的节点
+         for(int i&#x3D;l;i&lt;&#x3D;r;i++)&#123;
+             if(que[i]-&gt;left!&#x3D;NULL)&#123;
+                 que[++rear]&#x3D;que[i]-&gt;left;
+                temp.push_back(que[i]-&gt;left-&gt;val);
+             &#125;
+             if(que[i]-&gt;right!&#x3D;NULL)&#123;
+                 que[++rear]&#x3D;que[i]-&gt;right;
+                temp.push_back(que[i]-&gt;right-&gt;val);
+             &#125;
 
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+         &#125;
+         if(!temp.empty())
+            result.push_back(temp);
+         front&#x3D;r;
 
-<pre class="line-numbers language-none"><code class="language-none">结果为   多个参数被调用<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+     &#125;
+     return result;
 
-<h3 id="java-数组"><a href="#java-数组" class="headerlink" title="java 数组"></a>java 数组</h3><h4 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h4><ol>
-<li><p>动态初始化</p>
-<pre class="line-numbers language-none"><code class="language-none">int[]a&#x3D; new int[5];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>静态初始化</p>
-<pre class="line-numbers language-none"><code class="language-none">int[]a&#x3D; new int[]&#123;12,3,4,5&#125;;
-int[]a&#x3D;&#123;1,22,3,4&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>数组的属性</p>
-<p>a.length 返回数组的长度</p>
-</li>
-</ol>
-<p>例子:</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>company</span><span class="token punctuation">;</span>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Random</span><span class="token punctuation">;</span>
+<p>算法美学 呜呜….</p>
+<pre class="line-numbers language-none"><code class="language-none">做完了 2015 第三篇文章 做了俩个  心态炸裂<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyText</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>a<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//随机产生0-10的数 动态赋值给数组</span>
-            
-        <span class="token punctuation">&#125;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//使用数组工具查看值</span>
-    <span class="token punctuation">&#125;</span>
-
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="数组工具类Arrays"><a href="#数组工具类Arrays" class="headerlink" title="数组工具类Arrays"></a>数组工具类Arrays</h3><h4 id="Arrays-sort-数组名"><a href="#Arrays-sort-数组名" class="headerlink" title="Arrays.sort(数组名)"></a>Arrays.sort(数组名)</h4><pre class="line-numbers language-none"><code class="language-none">注意该数组已经发生改变 变成排序后的
-        Arrays.sort(a);
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(a));&#x2F;&#x2F;使用数组工具查看值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="Arrays-copyOf-数组-长度"><a href="#Arrays-copyOf-数组-长度" class="headerlink" title="Arrays.copyOf(数组,长度)"></a>Arrays.copyOf(数组,长度)</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>company</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Random</span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyText</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>a<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'1'</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>copy<span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">copyOf</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>copy<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-<span class="token punctuation">&#125;</span>
-输出
-<span class="token punctuation">[</span><span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<p>最后一定要英语阅读精翻  回去要干！！！</p>
+<p>最后一定要英语阅读精翻  回去要干！！！</p>
+<p>最后一定要英语阅读精翻  回去要干！！！</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
                 
             </div>
             <hr/>
@@ -641,7 +636,7 @@ int[]a&#x3D;&#123;1,22,3,4&#125;<span aria-hidden="true" class="line-numbers-row
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/11/16/java-xue-xi-cong-0-dao-1/">http://example.com/2021/11/16/java-xue-xi-cong-0-dao-1/</a>
+                    <a href="http://example.com/2022/08/13/8-13-xiao-jie/">http://example.com/2022/08/13/8-13-xiao-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -679,8 +674,8 @@ int[]a&#x3D;&#123;1,22,3,4&#125;<span aria-hidden="true" class="line-numbers-row
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/%E8%80%83%E7%A0%94/">
+                                    <span class="chip bg-color">考研</span>
                                 </a>
                             
                         </div>
@@ -852,17 +847,18 @@ int[]a&#x3D;&#123;1,22,3,4&#125;<span aria-hidden="true" class="line-numbers-row
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/11/24/java-spring-kuang-jia-xue-xi-yi/">
+                <a href="/2022/08/13/8-13-xiao-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="java Spring框架学习(一)">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="8.13小结">
                         
-                        <span class="card-title">java Spring框架学习(一)</span>
+                        <span class="card-title">8.13小结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -872,26 +868,23 @@ int[]a&#x3D;&#123;1,22,3,4&#125;<span aria-hidden="true" class="line-numbers-row
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-13
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            rgylin
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E8%80%83%E7%A0%94/">
+                        <span class="chip bg-color">考研</span>
                     </a>
                     
                 </div>
@@ -905,13 +898,13 @@ int[]a&#x3D;&#123;1,22,3,4&#125;<span aria-hidden="true" class="line-numbers-row
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/11/ai-zi-tai-gu-ji-mo-kuai-xue-xi/">
+                <a href="/2022/08/13/math-sign/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="AI-姿态估计模块学习">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="math_sign">
                         
-                        <span class="card-title">AI-姿态估计模块学习</span>
+                        <span class="card-title">math_sign</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -922,16 +915,12 @@ int[]a&#x3D;&#123;1,22,3,4&#125;<span aria-hidden="true" class="line-numbers-row
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-13
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category">
-                                    python
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            rgylin
                             
                         </span>
                     </div>
@@ -939,8 +928,8 @@ int[]a&#x3D;&#123;1,22,3,4&#125;<span aria-hidden="true" class="line-numbers-row
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/AI/">
-                        <span class="chip bg-color">AI</span>
+                    <a href="/tags/%E8%80%83%E7%A0%941/">
+                        <span class="chip bg-color">考研1</span>
                     </a>
                     
                 </div>
